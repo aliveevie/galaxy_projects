@@ -12,7 +12,7 @@ function submitForm(event) {
         });
 
         // Send form data to the server
-        fetch('your_server_endpoint', {
+        fetch('/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
