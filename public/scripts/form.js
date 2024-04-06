@@ -26,7 +26,9 @@ function submitForm(event) {
             }else{
                 document.getElementById('loader').style.display = 'none';
                 document.getElementById('success').style.display = 'block';
-
+                setTimeout(() => {
+                    document.getElementById('success').style.display = 'none';
+                }, 5000)
 
             }
 
