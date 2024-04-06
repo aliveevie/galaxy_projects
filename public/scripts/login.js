@@ -4,8 +4,9 @@ async function sendResponseToServer(username, password) {
         password: password
     };
 
+
     try {
-        const response = await fetch('/login', {
+        const response = await fetch('/api/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -18,13 +19,19 @@ async function sendResponseToServer(username, password) {
         }
 
         const responseData = await response.json();
-        console.log('Response from server:', responseData);
+          
+        if(responseData.message=="Invalid username or password"){
+            document.getElementById('error').innerText = responseData.message
+        }else{
+            window.location = "./dashboard.html"
+        }
         // Do something with the response data if needed
     } catch (error) {
         console.error('Error sending response to server:', error);
         // Handle errors here
     }
 }
+
 
 function submitForm(event) {
     event.preventDefault(); // Prevent default form submission

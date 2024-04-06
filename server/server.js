@@ -33,9 +33,28 @@ app.post('/', async (req, res) => {
     }
 });
 
-app.post('/api/login', (req, res) => {
-    console.log(req.body)
-})
+app.post('/api/login', async (req, res) => {
+    const { username, password } = req.body;
+
+    try {
+        // Query the database to check if the username and password match
+        const result = await db.query('SELECT * FROM admin WHERE username = $1 AND password = $2', [username, password]);
+
+        // Check if any rows were returned from the query
+        if (result.rows.length === 1) {
+            // User is authenticated, send success response
+            res.status(200).json({ message: 'Login successful' });
+        } else {
+            // User is not authenticated, send error response
+            res.json({ message: 'Invalid username or password' });
+        }
+    } catch (error) {
+        console.error('Error during login:', error);
+        // Send an error response
+        res.status(500).json({ error: 'An error occurred during login' });
+    }
+});
+
 
 
 app.get('/api/messages', async (req, res) => {
