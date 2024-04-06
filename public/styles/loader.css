@@ -46,8 +46,8 @@
     margin-bottom: 20px;
 }
 
-#success{
-    display: block;
+#error{
+    text-align: center;
 }
 
 .success p{

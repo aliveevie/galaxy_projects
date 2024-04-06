@@ -22,6 +22,10 @@ function submitForm(event) {
         })
         .then(response => {
             if (!response.ok) {
+                document.getElementById('error').style.display = 'block';
+                setTimeout(() => {
+                    document.getElementById('error').style.display = 'none';
+                }, 5000)
                 throw new Error('Network response was not ok');
             }else{
                 document.getElementById('loader').style.display = 'none';
@@ -36,6 +40,10 @@ function submitForm(event) {
         })
         
         .catch(error => {
+            document.getElementById('error').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('error').style.display = 'none';
+            }, 5000)
             console.error('There was a problem with the form submission:', error);
             // Optionally, handle errors
         });
