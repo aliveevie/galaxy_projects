@@ -5,6 +5,7 @@ function submitForm(event) {
         const form = document.getElementById('messageForm');
         const formData = new FormData(form);
 
+        document.getElementById('loader').style.display = 'block';
         // Convert form data to JSON
         const jsonData = {};
         formData.forEach((value, key) => {
@@ -22,13 +23,16 @@ function submitForm(event) {
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
+            }else{
+                document.getElementById('loader').style.display = 'none';
+                document.getElementById('success').style.display = 'block';
+
+
             }
-            return response.json();
+
+            // return response.json();
         })
-        .then(data => {
-            console.log('Form submitted successfully:', data);
-            // Optionally, do something after successful submission
-        })
+        
         .catch(error => {
             console.error('There was a problem with the form submission:', error);
             // Optionally, handle errors
