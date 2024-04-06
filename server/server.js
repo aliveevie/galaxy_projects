@@ -33,6 +33,9 @@ app.post('/', async (req, res) => {
     }
 });
 
+app.post('/api/login', (req, res) => {
+    console.log(req.body)
+})
 
 
 app.get('/api/messages', async (req, res) => {
@@ -47,6 +50,8 @@ app.get('/api/messages', async (req, res) => {
         res.status(500).json({ error: 'An error occurred while fetching messages' });
     }
 });
+
+
 
 
 app.listen(port, () => {

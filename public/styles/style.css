@@ -12,6 +12,27 @@ header {
     text-align: center;
 }
 
+header {
+    position: relative;
+    padding: 20px;
+}
+
+.admin-login {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: white; /* Change the color as needed */
+}
+
+.admin-login i {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+
 form {
     background-color: #fff;
     padding: 20px;
