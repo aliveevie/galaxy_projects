@@ -15,6 +15,7 @@ async function fetchAndRenderMessages() {
                 <td>${message.lga}</td>
                 <td>${message.address}</td>
                 <td>${message.phone}</td>
+                <td>${message.email}</td>
                 <td>
                     <button onclick="viewMessage(${message.id})">View</button>
                     <button onclick="deleteMessage(${message.id})">Delete</button>
