@@ -29,3 +29,48 @@ main {
     padding: 10px;
     margin-bottom: 10px;
 }
+
+
+/* CSS for the messages table */
+.messages-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#messages-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#messages-table th,
+#messages-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+#messages-table th {
+    background-color: #f2f2f2;
+}
+
+#messages-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#messages-table tbody tr:hover {
+    background-color: #e2e2e2;
+}
+
+/* CSS for the buttons */
+#messages-table button {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+#messages-table button:hover {
+    background-color: #45a049;
+}
