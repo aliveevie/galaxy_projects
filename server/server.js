@@ -56,7 +56,6 @@ app.post('/api/login', async (req, res) => {
 });
 
 
-
 app.get('/api/messages', async (req, res) => {
     try {
         // Query the database to retrieve all messages
@@ -69,6 +68,31 @@ app.get('/api/messages', async (req, res) => {
         res.status(500).json({ error: 'An error occurred while fetching messages' });
     }
 });
+
+
+app.get('/api/messages/:id', async (req, res) => {
+    const messageId = req.params.id;
+
+    try {
+        // Query the database to retrieve the message with the specified ID
+        const result = await db.query('SELECT * FROM messages WHERE id = $1', [messageId]);
+
+        // Check if a message with the specified ID was found
+        if (result.rows.length === 1) {
+            // Send the message back to the client
+            res.status(200).json(result.rows[0]);
+        } else {
+            // If no message found with the specified ID, send a 404 Not Found response
+            res.status(404).json({ error: 'Message not found' });
+        }
+    } catch (error) {
+        console.error('Error fetching message:', error);
+        res.status(500).json({ error: 'An error occurred while fetching message' });
+    }
+});
+
+
+
 
 
 
