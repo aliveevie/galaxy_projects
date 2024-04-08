@@ -33,7 +33,7 @@ window.onload = fetchAndRenderMessages;
 
 // View message function (placeholder)
 function viewMessage(id) {
-    window.location.href = `./message?id=${id}`;
+    window.location.href = `./message.html?id=${id}`;
 }
 
 // Delete message function (placeholder)

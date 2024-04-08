@@ -3,9 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../styles/message.css" rel="stylesheet"  />
     <title>View Message</title>
 </head>
 <body>
-    <h1>Message ID</h1>
+    <div class="message-container">
+        <h1>Message Details</h1>
+        <div class="message-info">
+            <p><strong>Message:</strong> <span id="message"></span></p>
+            <p><strong>Email:</strong> <span id="email"></span></p>
+            <p><strong>Date:</strong> <span id="date"></span></p>
+        </div>
+        <div class="buttons">
+            <button class="btn" onclick="printMessage()">Print</button>
+            <button class="btn" onclick="replyMessage()">Reply</button>
+        </div>
+    </div>
 </body>
 </html>
