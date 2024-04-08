@@ -11,6 +11,7 @@ async function fetchAndRenderMessages() {
         messages.forEach(message => {
             const row = document.createElement('tr');
             row.innerHTML = `
+                <td>${message.id}</td>
                 <td>${message.name}</td>
                 <td>${message.lga}</td>
                 <td>${message.address}</td>
@@ -18,7 +19,6 @@ async function fetchAndRenderMessages() {
                 <td>${message.email}</td>
                 <td>
                     <button onclick="viewMessage(${message.id})">View</button>
-                    <button onclick="deleteMessage(${message.id})">Delete</button>
                 </td>
             `;
             tableBody.appendChild(row);
@@ -33,7 +33,7 @@ window.onload = fetchAndRenderMessages;
 
 // View message function (placeholder)
 function viewMessage(id) {
-    alert(`View message with ID ${id}`);
+    window.location.href = `./message?id=${id}`;
 }
 
 // Delete message function (placeholder)
