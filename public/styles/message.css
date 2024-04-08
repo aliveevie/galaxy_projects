@@ -1,27 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container styles */
 .message-container {
-    max-width: 600px;
-    margin: 0 auto;
+    max-width: 800px;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Header styles */
+.header {
+    background-color: #f1f1f1;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+}
+
+.header h1 {
+    margin-right: auto;
+    color: #333;
+}
+
+/* Message content styles */
+.message-content {
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: whitesmoke;
 }
 
 .message-info {
-    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #666;
 }
 
-.message-info p {
-    margin-bottom: 10px;
+.message-info p strong {
+    font-weight: bold;
+    color: #333;
+}
+
+.message {
+    color: #333;
 }
 
 /* Button styles */
+.btn-container {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f1f1f1;
+    border-top: 1px solid #ddd;
+}
+
 .btn {
     padding: 10px 20px;
     background-color: #007bff;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }

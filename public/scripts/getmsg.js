@@ -47,6 +47,4 @@ const urlParams = new URLSearchParams(window.location.search);
             return formattedDate.replace(String(day), formattedDay);
         }
         
-        const dateStr = "2024-04-05T13:09:39.710Z";
-        console.log(formatDate(dateStr)); // Output: "5th April, 2024"
         

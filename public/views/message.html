@@ -8,13 +8,20 @@
 </head>
 <body>
     <div class="message-container">
-        <h1>Message Details</h1>
-        <div class="message-info">
-            <p><strong>Message:</strong> <span id="message"></span></p>
-            <p><strong>Email:</strong> <span id="email"></span></p>
-            <p><strong>Date:</strong> <span id="date"></span></p>
+        <div class="header">
+            <h1>Message Details</h1>
         </div>
-        <div class="buttons">
+        <div class="message-content">
+            <div class="message-info">
+                <p><strong>From:</strong> <span id="email"></span></p>
+                <p><strong>Date:</strong> <span id="date"></span></p>
+            </div>
+            <div class="message">
+                <p><strong>Message:</strong></p>
+                <p id="message"></p>
+            </div>
+        </div>
+        <div class="btn-container">
             <button class="btn" onclick="printMessage()">Print</button>
             <button class="btn" onclick="replyMessage()">Reply</button>
         </div>
